@@ -562,7 +562,7 @@
     <form name="agendamento" method="POST" netlify>
       <div class="form-group">
         <label for="service">Serviço *</label>
-        <select id="service" required>
+        <select id="service" name="service" required>
           <option value="">Selecione o serviço</option>
           <option value="direito-comercial">Direito Comercial</option>
           <option value="propriedade-industrial">Propriedade Industrial</option>
@@ -574,7 +574,7 @@
 
       <div class="form-group">
         <label for="location">Local de Atendimento *</label>
-        <select id="location" required onchange="updateAttendanceOptions()">
+        <select id="location" name="location" required onchange="updateAttendanceOptions()">
           <option value="">Selecione o local</option>
           <option value="maputo">Maputo</option>
           <option value="chimoio">Chimoio</option>
@@ -586,7 +586,7 @@
 
       <div class="form-group">
         <label for="attendance">Tipo de Atendimento *</label>
-        <select id="attendance" required>
+        <select id="attendance" name="attendance" required>
           <option value="">Selecione o tipo</option>
           <option value="online">Online</option>
           <option value="presencial" id="presencial-option">Presencial</option>
@@ -595,26 +595,26 @@
 
       <div class="form-group">
         <label for="name">Nome Completo *</label>
-        <input type="text" id="name" required>
+        <input type="text" id="name" name="name" required>
       </div>
 
       <div class="form-group">
         <label for="email">E-mail *</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
         <label for="phone">Telefone *</label>
-        <input type="tel" id="phone" required>
+        <input type="tel" id="phone" name="phone" required>
       </div>
 
       <div class="form-group">
         <label for="description">Descrição do Caso</label>
-        <textarea id="description" placeholder="Descreva brevemente o seu caso..."></textarea>
+        <textarea id="description" name="description" placeholder="Descreva brevemente o seu caso..."></textarea>
       </div>
 
       <div class="checkbox-group">
-        <input type="checkbox" id="privacy" required>
+        <input type="checkbox" id="privacy" name="privacy" required>
         <label for="privacy">Concordo com a <strong>política de privacidade</strong> e autorizo o contacto</label>
       </div>
 
@@ -623,17 +623,6 @@
   </div>
 </section>
 
-<!-- Netlify Form Handler (Hidden) -->
-<form name="agendamento" method="POST" netlify style="display: none;">
-  <input type="text" name="service">
-  <input type="text" name="location">
-  <input type="text" name="attendance">
-  <input type="text" name="name">
-  <input type="email" name="email">
-  <input type="tel" name="phone">
-  <textarea name="description"></textarea>
-  <input type="checkbox" name="privacy">
-</form>
 
 <!-- Contact Section -->
 <section class="contact-section">
@@ -675,23 +664,6 @@
       }
     }
   }
-
-  // Integração com Netlify Forms
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[name="agendamento"]:not([style*="display: none"])');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        document.querySelector('input[name="service"]').value = document.getElementById('service').value;
-        document.querySelector('input[name="location"]').value = document.getElementById('location').value;
-        document.querySelector('input[name="attendance"]').value = document.getElementById('attendance').value;
-        document.querySelector('input[name="name"]').value = document.getElementById('name').value;
-        document.querySelector('input[name="email"]').value = document.getElementById('email').value;
-        document.querySelector('input[name="phone"]').value = document.getElementById('phone').value;
-        document.querySelector('textarea[name="description"]').value = document.getElementById('description').value;
-        document.querySelector('input[name="privacy"]').checked = document.getElementById('privacy').checked;
-      });
-    }
-  });
 </script>
 
 </body>
