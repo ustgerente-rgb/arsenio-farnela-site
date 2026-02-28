@@ -557,18 +557,18 @@
 
 <!-- Booking Section -->
 <section class="booking-section" id="booking">
-  <h2>Agendar Consulta</h2>
+  <h2>Agendar Consulta via WhatsApp</h2>
   <div class="form-container">
-    <form name="agendamento" method="POST" netlify>
+    <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
       <div class="form-group">
         <label for="service">Serviço *</label>
         <select id="service" name="service" required>
           <option value="">Selecione o serviço</option>
-          <option value="direito-comercial">Direito Comercial</option>
-          <option value="propriedade-industrial">Propriedade Industrial</option>
-          <option value="trabalho">Direito do Trabalho</option>
-          <option value="familia-sucessoes">Família e Sucessões</option>
-          <option value="contencioso">Contencioso</option>
+          <option value="Direito Comercial">Direito Comercial</option>
+          <option value="Propriedade Industrial">Propriedade Industrial</option>
+          <option value="Direito do Trabalho">Direito do Trabalho</option>
+          <option value="Família e Sucessões">Família e Sucessões</option>
+          <option value="Contencioso">Contencioso</option>
         </select>
       </div>
 
@@ -576,11 +576,11 @@
         <label for="location">Local de Atendimento *</label>
         <select id="location" name="location" required onchange="updateAttendanceOptions()">
           <option value="">Selecione o local</option>
-          <option value="maputo">Maputo</option>
-          <option value="chimoio">Chimoio</option>
-          <option value="manica">Manica</option>
-          <option value="guro">Guro</option>
-          <option value="online">Online</option>
+          <option value="Maputo">Maputo</option>
+          <option value="Chimoio">Chimoio</option>
+          <option value="Manica">Manica</option>
+          <option value="Guro">Guro</option>
+          <option value="Online">Online</option>
         </select>
       </div>
 
@@ -588,19 +588,14 @@
         <label for="attendance">Tipo de Atendimento *</label>
         <select id="attendance" name="attendance" required>
           <option value="">Selecione o tipo</option>
-          <option value="online">Online</option>
-          <option value="presencial" id="presencial-option">Presencial</option>
+          <option value="Online">Online</option>
+          <option value="Presencial" id="presencial-option">Presencial</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="name">Nome Completo *</label>
         <input type="text" id="name" name="name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">E-mail *</label>
-        <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
@@ -618,7 +613,7 @@
         <label for="privacy">Concordo com a <strong>política de privacidade</strong> e autorizo o contacto</label>
       </div>
 
-      <button type="submit" class="submit-button">Agendar Consulta</button>
+      <button type="submit" class="submit-button">Enviar via WhatsApp</button>
     </form>
   </div>
 </section>
@@ -629,8 +624,8 @@
   <h2>Contactos</h2>
   <div class="contact-grid">
     <div class="contact-card">
-      <h3>E-mail</h3>
-      <a href="mailto:arseniofarnela@gmail.com">arseniofarnela@gmail.com</a>
+      <h3>WhatsApp</h3>
+      <a href="https://wa.me/258864476821" target="_blank">+258 864 476 821</a>
     </div>
     <div class="contact-card">
       <h3>Emola</h3>
@@ -654,15 +649,58 @@
     const presencialOption = document.getElementById('presencial-option');
     
     // Mostrar opção presencial apenas para Manica, Chimoio e Guro
-    if (location === 'manica' || location === 'chimoio' || location === 'guro') {
+    if (location === 'Manica' || location === 'Chimoio' || location === 'Guro') {
       presencialOption.style.display = 'block';
     } else {
       presencialOption.style.display = 'none';
       // Se presencial estava selecionado, mudar para online
-      if (document.getElementById('attendance').value === 'presencial') {
-        document.getElementById('attendance').value = 'online';
+      if (document.getElementById('attendance').value === 'Presencial') {
+        document.getElementById('attendance').value = 'Online';
       }
     }
+  }
+
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    // Obter dados do formulário
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const location = document.getElementById('location').value;
+    const attendance = document.getElementById('attendance').value;
+    const description = document.getElementById('description').value;
+    
+    // Formatar mensagem para WhatsApp
+    const message = `📋 *NOVO AGENDAMENTO*
+
+👤 *Nome:* ${name}
+📱 *Telefone:* ${phone}
+
+⚖️ *Serviço:* ${service}
+📍 *Local:* ${location}
+💬 *Tipo:* ${attendance}
+
+📝 *Descrição:*
+${description || 'Sem descrição'}
+
+⏰ *Data:* ${new Date().toLocaleDateString('pt-PT')} ${new Date().toLocaleTimeString('pt-PT')}`;
+    
+    // Codificar mensagem para URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Número do WhatsApp (sem + e espaços)
+    const whatsappNumber = '258864476821';
+    
+    // Abrir WhatsApp com mensagem pré-preenchida
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Mostrar confirmação
+    alert('✅ Redirecionando para WhatsApp...\n\nSua mensagem de agendamento será enviada.');
+    
+    // Limpar formulário
+    document.getElementById('bookingForm').reset();
   }
 </script>
 
