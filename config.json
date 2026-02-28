@@ -1,0 +1,93 @@
+{
+  "site": {
+    "title": "Arsénio Farnela - Advogado",
+    "description": "Advogado, Docente Universitário e Agente Oficial de Propriedade Industrial",
+    "author": "Arsénio Farnela",
+    "year": 2026
+  },
+  "contact": {
+    "email": "arseniofarnela@gmail.com",
+    "emola": "864486821",
+    "mpesa": "855484877"
+  },
+  "services": [
+    {
+      "id": "direito-comercial",
+      "name": "Direito Comercial",
+      "description": "Contratos, constituição de sociedades, compliance e consultoria empresarial."
+    },
+    {
+      "id": "propriedade-industrial",
+      "name": "Propriedade Industrial",
+      "description": "Registo de marcas, patentes, desenhos e modelos junto das autoridades competentes."
+    },
+    {
+      "id": "trabalho",
+      "name": "Direito do Trabalho",
+      "description": "Contratos laborais, litígios trabalhistas e consultoria em relações laborais."
+    },
+    {
+      "id": "familia-sucessoes",
+      "name": "Família e Sucessões",
+      "description": "Divórcios, inventários, testamentos e questões de direito familiar."
+    },
+    {
+      "id": "contencioso",
+      "name": "Contencioso",
+      "description": "Defesa em tribunais, mediação e resolução de conflitos."
+    }
+  ],
+  "areas": [
+    {
+      "name": "Maputo",
+      "description": "Atendimento online",
+      "presencial": false
+    },
+    {
+      "name": "Manica",
+      "description": "Chimoio, Manica, Guro e região",
+      "presencial": true
+    },
+    {
+      "name": "Online",
+      "description": "Consultas por videoconferência",
+      "presencial": false
+    }
+  ],
+  "pricing": {
+    "quid_juris": {
+      "name": "Inscrição QUID JURIS",
+      "description": "Turma",
+      "price": 5000,
+      "currency": "MT"
+    },
+    "mensalidade": {
+      "name": "Mensalidade",
+      "description": "Programa de Ensino",
+      "price": 3500,
+      "currency": "MT"
+    },
+    "consulta_online": {
+      "name": "Consulta Online",
+      "description": "Videoconferência",
+      "price": 1500,
+      "currency": "MT"
+    },
+    "consulta_presencial": {
+      "name": "Consulta Presencial",
+      "description": "Atendimento direto (Manica)",
+      "price": 3500,
+      "currency": "MT"
+    }
+  },
+  "colors": {
+    "primary": "#0A4D8C",
+    "secondary": "#C9A24A",
+    "background": "#f8f9fa",
+    "white": "#fff",
+    "text": "#333"
+  },
+  "social": {
+    "email": "arseniofarnela@gmail.com"
+  }
+}

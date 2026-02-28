@@ -1,0 +1,71 @@
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+
+# Node.js (se usar no futuro)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Python (se usar no futuro)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+
+# Variáveis de Ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Arquivos Temporários
+temp/
+tmp/
+*.tmp
+
+# Backups
+*.bak
+*.backup
+*~
+
+# Arquivos de Configuração Local
+config.local.js
+config.local.json
+
+# Diretórios de Build (se usar build tools no futuro)
+dist/
+build/
+out/
+
+# Arquivos Compilados
+*.o
+*.so
+*.dylib
+*.exe
+
+# Cache
+.cache/
+.eslintcache
+
+# Arquivos Sensíveis
+.htpasswd
+.htaccess (se houver senhas)
+secrets/
+credentials/

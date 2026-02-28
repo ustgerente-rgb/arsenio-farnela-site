@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arsénio Farnela - Advogado, Docente Universitário e Agente Oficial de Propriedade Industrial. Consultas presenciais e online em Maputo e Manica.">
+  <meta name="theme-color" content="#0A4D8C">
+  <title>Arsénio Farnela - Advogado | Consultas Jurídicas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    /* Header / Hero Section */
+    header {
+      background: linear-gradient(135deg, #0A4D8C 0%, #0d5fa3 100%);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(201, 162, 74, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-container {
+      margin-bottom: 30px;
+    }
+
+    .logo-container img {
+      max-width: 200px;
+      height: auto;
+      display: inline-block;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    header .subtitle {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 400;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header .cta-button {
+      background: #C9A24A;
+      color: #fff;
+      padding: 14px 32px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(201, 162, 74, 0.3);
+    }
+
+    header .cta-button:hover {
+      background: #b8912a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(201, 162, 74, 0.4);
+    }
+
+    /* Bio Section */
+    .bio-section {
+      background: #fff;
+      padding: 60px 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .bio-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .bio-container h2 {
+      color: #0A4D8C;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .bio-container p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    /* Main Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: #0A4D8C;
+      font-size: clamp(24px, 5vw, 32px);
+      margin-bottom: 40px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid #C9A24A;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-card h3 {
+      color: #0A4D8C;
+      font-size: 18px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: #f8f9fa;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .pricing-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .pricing-card h3 {
+      color: #0A4D8C;
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .pricing-card .price {
+      font-size: 28px;
+      color: #C9A24A;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+
+    .pricing-card .currency {
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* Service Areas */
+    .areas-section {
+      background: #fff;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .area-card {
+      background: linear-gradient(135deg, #0A4D8C 0%, #0d5fa3 100%);
+      color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(10, 77, 140, 0.2);
+    }
+
+    .area-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .area-card p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Booking Form */
+    .booking-section {
+      background: #f8f9fa;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0A4D8C;
+      box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .submit-button {
+      background: #0A4D8C;
+      color: #fff;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background: #073a66;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(10, 77, 140, 0.3);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      color: #0A4D8C;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      color: #555;
+      word-break: break-all;
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      color: #C9A24A;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .contact-card a:hover {
+      color: #b8912a;
+    }
+
+    /* Footer */
+    footer {
+      background: #0A4D8C;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 20px;
+      }
+
+      .logo-container img {
+        max-width: 150px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      header .subtitle {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      section h2 {
+        font-size: 24px;
+      }
+
+      .form-container {
+        padding: 30px 20px;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .areas-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 30px 15px;
+      }
+
+      .logo-container img {
+        max-width: 120px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      header .subtitle {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      section h2 {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      .service-card,
+      .pricing-card,
+      .area-card {
+        padding: 20px;
+      }
+
+      .form-container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header / Hero Section -->
+<header>
+  <div class="logo-container">
+    <img src="assets/logo.jpg" alt="QUID JURIS MOZ - Arsénio Farnela">
+  </div>
+  <h1>Arsénio Farnela</h1>
+  <p class="subtitle">Advogado, Docente Universitário e Agente Oficial de Propriedade Industrial</p>
+  <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Agendar Consulta</button>
+</header>
+
+<!-- Bio Section -->
+<section class="bio-section">
+  <div class="bio-container">
+    <h2>Sobre</h2>
+    <p>Arsénio Farnela — Advogado e Docente Universitário com experiência em direito comercial, propriedade industrial e contencioso. Oferece consultas presenciais e online com atendimento personalizado.</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section>
+  <h2>Serviços</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Direito Comercial</h3>
+      <p>Contratos, constituição de sociedades, compliance e consultoria empresarial.</p>
+    </div>
+    <div class="service-card">
+      <h3>Propriedade Industrial</h3>
+      <p>Registo de marcas, patentes, desenhos e modelos junto das autoridades competentes.</p>
+    </div>
+    <div class="service-card">
+      <h3>Direito do Trabalho</h3>
+      <p>Contratos laborais, litígios trabalhistas e consultoria em relações laborais.</p>
+    </div>
+    <div class="service-card">
+      <h3>Família e Sucessões</h3>
+      <p>Divórcios, inventários, testamentos e questões de direito familiar.</p>
+    </div>
+    <div class="service-card">
+      <h3>Contencioso</h3>
+      <p>Defesa em tribunais, mediação e resolução de conflitos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Service Areas Section -->
+<section class="areas-section">
+  <h2>Áreas de Atendimento</h2>
+  <div class="areas-grid">
+    <div class="area-card">
+      <h3>Maputo</h3>
+      <p>Atendimento online</p>
+    </div>
+    <div class="area-card">
+      <h3>Manica</h3>
+      <p>Chimoio, Manica, Guro e região</p>
+    </div>
+    <div class="area-card">
+      <h3>Online</h3>
+      <p>Consultas por videoconferência</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <h2>Consultas e Preços</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Inscrição QUID JURIS</h3>
+      <p class="currency">Turma</p>
+      <div class="price">5.000 <span class="currency">MT</span></div>
+    </div>
+    <div class="pricing-card">
+      <h3>Mensalidade</h3>
+      <p class="currency">Programa de Ensino</p>
+      <div class="price">3.500 <span class="currency">MT</span></div>
+    </div>
+    <div class="pricing-card">
+      <h3>Consulta Online</h3>
+      <p class="currency">Videoconferência</p>
+      <div class="price">1.500 <span class="currency">MT</span></div>
+    </div>
+    <div class="pricing-card">
+      <h3>Consulta Presencial</h3>
+      <p class="currency">Atendimento direto (Manica)</p>
+      <div class="price">3.500 <span class="currency">MT</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section class="booking-section" id="booking">
+  <h2>Agendar Consulta</h2>
+  <div class="form-container">
+    <form>
+      <div class="form-group">
+        <label for="service">Serviço *</label>
+        <select id="service" required>
+          <option value="">Selecione o serviço</option>
+          <option value="direito-comercial">Direito Comercial</option>
+          <option value="propriedade-industrial">Propriedade Industrial</option>
+          <option value="trabalho">Direito do Trabalho</option>
+          <option value="familia-sucessoes">Família e Sucessões</option>
+          <option value="contencioso">Contencioso</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Local de Atendimento *</label>
+        <select id="location" required onchange="updateAttendanceOptions()">
+          <option value="">Selecione o local</option>
+          <option value="maputo">Maputo</option>
+          <option value="chimoio">Chimoio</option>
+          <option value="manica">Manica</option>
+          <option value="guro">Guro</option>
+          <option value="online">Online</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="attendance">Tipo de Atendimento *</label>
+        <select id="attendance" required>
+          <option value="">Selecione o tipo</option>
+          <option value="online">Online</option>
+          <option value="presencial" id="presencial-option">Presencial</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nome Completo *</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Telefone *</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descrição do Caso</label>
+        <textarea id="description" placeholder="Descreva brevemente o seu caso..."></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="privacy" required>
+        <label for="privacy">Concordo com a <strong>política de privacidade</strong> e autorizo o contacto</label>
+      </div>
+
+      <button type="submit" class="submit-button">Agendar Consulta</button>
+    </form>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <h2>Contactos</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>E-mail</h3>
+      <a href="mailto:arseniofarnela@gmail.com">arseniofarnela@gmail.com</a>
+    </div>
+    <div class="contact-card">
+      <h3>Emola</h3>
+      <p><strong>864486821</strong></p>
+    </div>
+    <div class="contact-card">
+      <h3>M-Pesa</h3>
+      <p><strong>855484877</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Arsénio Farnela — Todos os direitos reservados</p>
+</footer>
+
+<script>
+  function updateAttendanceOptions() {
+    const location = document.getElementById('location').value;
+    const presencialOption = document.getElementById('presencial-option');
+    
+    // Mostrar opção presencial apenas para Manica, Chimoio e Guro
+    if (location === 'manica' || location === 'chimoio' || location === 'guro') {
+      presencialOption.style.display = 'block';
+    } else {
+      presencialOption.style.display = 'none';
+      // Se presencial estava selecionado, mudar para online
+      if (document.getElementById('attendance').value === 'presencial') {
+        document.getElementById('attendance').value = 'online';
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
