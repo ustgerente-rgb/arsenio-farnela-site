@@ -559,7 +559,7 @@
 <section class="booking-section" id="booking">
   <h2>Agendar Consulta</h2>
   <div class="form-container">
-    <form>
+    <form name="agendamento" method="POST" netlify>
       <div class="form-group">
         <label for="service">Serviço *</label>
         <select id="service" required>
@@ -623,6 +623,18 @@
   </div>
 </section>
 
+<!-- Netlify Form Handler (Hidden) -->
+<form name="agendamento" method="POST" netlify style="display: none;">
+  <input type="text" name="service">
+  <input type="text" name="location">
+  <input type="text" name="attendance">
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <input type="tel" name="phone">
+  <textarea name="description"></textarea>
+  <input type="checkbox" name="privacy">
+</form>
+
 <!-- Contact Section -->
 <section class="contact-section">
   <h2>Contactos</h2>
@@ -663,6 +675,23 @@
       }
     }
   }
+
+  // Integração com Netlify Forms
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="agendamento"]:not([style*="display: none"])');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        document.querySelector('input[name="service"]').value = document.getElementById('service').value;
+        document.querySelector('input[name="location"]').value = document.getElementById('location').value;
+        document.querySelector('input[name="attendance"]').value = document.getElementById('attendance').value;
+        document.querySelector('input[name="name"]').value = document.getElementById('name').value;
+        document.querySelector('input[name="email"]').value = document.getElementById('email').value;
+        document.querySelector('input[name="phone"]').value = document.getElementById('phone').value;
+        document.querySelector('textarea[name="description"]').value = document.getElementById('description').value;
+        document.querySelector('input[name="privacy"]').checked = document.getElementById('privacy').checked;
+      });
+    }
+  });
 </script>
 
 </body>
